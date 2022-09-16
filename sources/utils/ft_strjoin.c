@@ -6,17 +6,17 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 17:20:25 by lbatista          #+#    #+#             */
-/*   Updated: 2022/08/30 11:06:56 by lbatista         ###   ########.fr       */
+/*   Updated: 2022/09/16 19:29:34 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *new_word;
-	size_t strings_size;
-	size_t i;
+	char	*new_word;
+	size_t	strings_size;
+	size_t	i;
 
 	if (!s1 || !s2)
 		return (0);

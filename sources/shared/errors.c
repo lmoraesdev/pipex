@@ -6,13 +6,13 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 17:20:08 by lbatista          #+#    #+#             */
-/*   Updated: 2022/09/12 11:58:17 by lbatista         ###   ########.fr       */
+/*   Updated: 2022/09/16 19:22:51 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void errors_append(t_args *args, char **cmd_args, char *path, int code)
+void	errors_append(t_args *args, char **cmd_args, char *path, int code)
 {
 	if (code == 1)
 	{
@@ -39,7 +39,7 @@ void errors_append(t_args *args, char **cmd_args, char *path, int code)
 	}
 }
 
-void errors(t_args *args, int code)
+void	errors(t_args *args, int code)
 {
 	if (code == 1)
 	{
@@ -61,9 +61,9 @@ void errors(t_args *args, int code)
 	}
 }
 
-void check_arguments(char **argv)
+void	check_arguments(char **argv)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (argv[i])

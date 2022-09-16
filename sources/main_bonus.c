@@ -6,33 +6,35 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 17:17:11 by lbatista          #+#    #+#             */
-/*   Updated: 2022/08/30 11:02:03 by lbatista         ###   ########.fr       */
+/*   Updated: 2022/09/16 19:55:41 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex_bonus.h"
 
-static void open_files(t_args *args, int type, int *outfile, int *infile)
+static void	open_files(t_args *args, int type, int *outfile, int *infile)
 {
 	if (type == 1)
 	{
-		*outfile = open(args->argv[args->argc - 1], O_CREAT | O_WRONLY | O_APPEND, 0664);
+		*outfile = open(args->argv[args->argc - 1], O_CREAT | O_WRONLY
+				| O_APPEND, 0664);
 		if (*outfile == -1)
 			errors(args, 1);
 	}
 	else if (type == 2)
 	{
 		*infile = open(args->argv[1], O_RDONLY);
-		*outfile = open(args->argv[args->argc - 1], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+		*outfile = open(args->argv[args->argc - 1], O_CREAT | O_WRONLY
+				| O_TRUNC, 0664);
 		if (*outfile == -1 || *infile == -1)
 			errors(args, 1);
 	}
 }
 
-static void here_doc(t_args *args)
+static void	here_doc(t_args *args)
 {
-	int fd[2];
-	char *line;
+	int		fd[2];
+	char	*line;
 
 	if (pipe(fd) == -1)
 		errors(args, 1);
@@ -50,11 +52,11 @@ static void here_doc(t_args *args)
 	close(fd[0]);
 }
 
-static void set_index(int argc, char **argv, t_args *args)
+static void	set_index(int argc, char **argv, t_args *args)
 {
-	int index;
-	int outfile;
-	int infile;
+	int	index;
+	int	outfile;
+	int	infile;
 
 	if (ft_strncmp(argv[1], "here_doc", ft_strlen(argv[1])) == 0)
 	{
@@ -76,9 +78,9 @@ static void set_index(int argc, char **argv, t_args *args)
 	}
 }
 
-int main(int argc, char **argv, char **envp)
+int	main(int argc, char **argv, char **envp)
 {
-	t_args args;
+	t_args	args;
 
 	check_arguments(argv);
 	args.argv = argv;

@@ -6,15 +6,15 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 21:45:44 by lbatista          #+#    #+#             */
-/*   Updated: 2022/08/30 11:08:10 by lbatista         ###   ########.fr       */
+/*   Updated: 2022/09/16 19:28:20 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *substring;
+	char	*substring;
 
 	if (!s)
 		return (0);

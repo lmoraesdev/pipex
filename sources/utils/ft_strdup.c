@@ -6,16 +6,16 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 15:59:44 by lbatista          #+#    #+#             */
-/*   Updated: 2022/08/30 11:05:57 by lbatista         ###   ########.fr       */
+/*   Updated: 2022/09/16 19:31:39 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-char *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
-	size_t size;
-	char *new_word;
+	size_t	size;
+	char	*new_word;
 
 	size = ft_strlen(s);
 	new_word = malloc(sizeof(char) * (size + 1));

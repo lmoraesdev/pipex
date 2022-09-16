@@ -6,13 +6,13 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 11:06:34 by lbatista          #+#    #+#             */
-/*   Updated: 2022/08/30 11:06:36 by lbatista         ###   ########.fr       */
+/*   Updated: 2022/09/16 19:27:29 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int ft_strcmp(char *str, char *str2)
+int	ft_strcmp(char *str, char *str2)
 {
 	while (*str && *str2)
 	{

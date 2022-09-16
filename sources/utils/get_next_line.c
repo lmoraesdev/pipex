@@ -6,23 +6,23 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 11:01:42 by lbatista          #+#    #+#             */
-/*   Updated: 2022/08/30 11:01:52 by lbatista         ###   ########.fr       */
+/*   Updated: 2022/09/16 20:01:31 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex_bonus.h"
 
-static void free_ptr(char **ptr)
+static void	free_ptr(char **ptr)
 {
 	free(*ptr);
 	*ptr = NULL;
 }
 
-static char *gets_the_crumbs(char **crumbs)
+static char	*gets_the_crumbs(char **crumbs)
 {
-	char *line;
-	size_t buffer_len;
-	char *temp_crumbs;
+	char	*line;
+	size_t	buffer_len;
+	char	*temp_crumbs;
 
 	buffer_len = 0;
 	while ((*crumbs)[buffer_len] != '\n')
@@ -35,10 +35,10 @@ static char *gets_the_crumbs(char **crumbs)
 	return (line);
 }
 
-static int till_line_break(int fd, char **crumbs, char **buffer)
+static int	till_line_break(int fd, char **crumbs, char **buffer)
 {
-	int i;
-	char *join_crumbs;
+	int		i;
+	char	*join_crumbs;
 
 	i = 1;
 	join_crumbs = NULL;
@@ -55,10 +55,10 @@ static int till_line_break(int fd, char **crumbs, char **buffer)
 	return (i);
 }
 
-static void *get_each_line(int fd, char **buffer, char **crumbs)
+static void	*get_each_line(int fd, char **buffer, char **crumbs)
 {
-	char *join_crumbs;
-	int i;
+	char	*join_crumbs;
+	int		i;
 
 	i = till_line_break(fd, crumbs, buffer);
 	if (ft_strchr(*crumbs, '\n'))
@@ -73,11 +73,11 @@ static void *get_each_line(int fd, char **buffer, char **crumbs)
 	return (join_crumbs);
 }
 
-char *get_next_line(int fd)
+char	*get_next_line(int fd)
 {
-	char *buffer;
-	static char *crumbs;
-	char *line;
+	static char	*crumbs;
+	char		*buffer;
+	char		*line;
 
 	if (BUFFER_SIZE <= 0 || fd < 0)
 		return (NULL);

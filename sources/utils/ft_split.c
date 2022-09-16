@@ -6,13 +6,13 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 16:58:54 by lbatista          #+#    #+#             */
-/*   Updated: 2022/08/30 11:05:15 by lbatista         ###   ########.fr       */
+/*   Updated: 2022/09/16 20:05:26 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-static int set_c(char const **s, char *c, int count)
+static int	set_c(char const **s, char *c, int count)
 {
 	while (**s && (**s == *c || **s == '\''))
 	{
@@ -31,10 +31,10 @@ static int set_c(char const **s, char *c, int count)
 	return (count);
 }
 
-static int get_words_number(char const *str, char c)
+static int	get_words_number(char const *str, char c)
 {
-	int d;
-	int count;
+	int	d;
+	int	count;
 
 	count = 0;
 	d = 0;
@@ -49,9 +49,9 @@ static int get_words_number(char const *str, char c)
 	return (d);
 }
 
-static int get_word_size(char const *str, char c)
+static int	get_word_size(char const *str, char c)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (*str && (*str != c && *str != '\''))
@@ -62,11 +62,11 @@ static int get_word_size(char const *str, char c)
 	return (i);
 }
 
-static char **get_string(char **arr_words, const char *s, char c, size_t *i)
+static char	**get_string(char **arr_words, const char *s, char c, size_t *i)
 {
-	int count;
-	int word_size;
-	size_t words_count;
+	size_t	words_count;
+	int		count;
+	int		word_size;
 
 	words_count = get_words_number(s, c);
 	count = 0;
@@ -86,11 +86,11 @@ static char **get_string(char **arr_words, const char *s, char c, size_t *i)
 	return (arr_words);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char **arr_words;
-	size_t i;
-	size_t words_count;
+	char	**arr_words;
+	size_t	i;
+	size_t	words_count;
 
 	words_count = get_words_number(s, c);
 	i = 0;

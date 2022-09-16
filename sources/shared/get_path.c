@@ -6,16 +6,16 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 17:21:06 by lbatista          #+#    #+#             */
-/*   Updated: 2022/09/12 11:58:11 by lbatista         ###   ########.fr       */
+/*   Updated: 2022/09/16 19:57:40 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-static int add_slash(char **splitted_path)
+static int	add_slash(char **splitted_path)
 {
-	char *tmp;
-	int i;
+	char	*tmp;
+	int		i;
 
 	i = 0;
 	while (splitted_path[i] != NULL)
@@ -33,18 +33,18 @@ static int add_slash(char **splitted_path)
 	return (0);
 }
 
-static char **split_path(char *path)
+static char	**split_path(char *path)
 {
-	char **splitted_path;
+	char	**splitted_path;
 
 	splitted_path = ft_split(path, ':');
 	return (splitted_path);
 }
 
-static char *extract_path(char **envp)
+static char	*extract_path(char **envp)
 {
-	char *path;
-	int i;
+	char	*path;
+	int		i;
 
 	i = 0;
 	while (envp[i] != NULL)
@@ -59,10 +59,10 @@ static char *extract_path(char **envp)
 	return (NULL);
 }
 
-char **get_path(char **envp)
+char	**get_path(char **envp)
 {
-	char *path;
-	char **splitted_path;
+	char	*path;
+	char	**splitted_path;
 
 	if (envp == NULL)
 		return (NULL);

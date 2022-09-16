@@ -6,17 +6,17 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 17:17:58 by lbatista          #+#    #+#             */
-/*   Updated: 2022/08/29 17:18:27 by lbatista         ###   ########.fr       */
+/*   Updated: 2022/09/16 20:02:40 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-static void child_process(t_args *args, int fd[2])
+static void	child_process(t_args *args, int fd[2])
 {
-	int file;
-	char **cmd_args;
-	char *cmd_path;
+	int		file;
+	char	**cmd_args;
+	char	*cmd_path;
 
 	file = open(args->argv[1], O_RDONLY);
 	if (file == -1)
@@ -36,11 +36,11 @@ static void child_process(t_args *args, int fd[2])
 		errors_append(args, cmd_args, cmd_path, 2);
 }
 
-static void parent_process(t_args *args, int fd[2])
+static void	parent_process(t_args *args, int fd[2])
 {
-	int file;
-	char **cmd_args;
-	char *cmd_path;
+	int		file;
+	char	**cmd_args;
+	char	*cmd_path;
 
 	file = open(args->argv[4], O_CREAT | O_WRONLY | O_TRUNC, 0644);
 	if (file == -1)
@@ -60,10 +60,10 @@ static void parent_process(t_args *args, int fd[2])
 		errors_append(args, cmd_args, cmd_path, 2);
 }
 
-static void pipex(t_args *args)
+static void	pipex(t_args *args)
 {
-	int fd[2];
-	int id;
+	int	fd[2];
+	int	id;
 
 	if (pipe(fd) == -1)
 		errors(args, 1);
@@ -79,9 +79,9 @@ static void pipex(t_args *args)
 	}
 }
 
-int main(int argc, char **argv, char **envp)
+int	main(int argc, char **argv, char **envp)
 {
-	t_args args;
+	t_args	args;
 
 	if (argc < 5)
 	{

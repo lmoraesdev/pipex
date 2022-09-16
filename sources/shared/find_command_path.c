@@ -6,16 +6,16 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 17:20:31 by lbatista          #+#    #+#             */
-/*   Updated: 2022/09/12 11:58:07 by lbatista         ###   ########.fr       */
+/*   Updated: 2022/09/16 20:04:43 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-char *find_command_path(char **path, char *cmd)
+char	*find_command_path(char **path, char *cmd)
 {
-	char *cmd_path;
-	int i;
+	char	*cmd_path;
+	int		i;
 
 	i = 0;
 	if (ft_strchr(cmd, '/') != NULL && access(cmd, F_OK | X_OK) == 0)
@@ -29,7 +29,7 @@ char *find_command_path(char **path, char *cmd)
 		if (cmd_path == NULL)
 		{
 			i++;
-			continue;
+			continue ;
 		}
 		if (access(cmd_path, F_OK | X_OK) == 0)
 			return (cmd_path);

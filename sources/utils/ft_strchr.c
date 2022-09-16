@@ -6,13 +6,13 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 15:59:36 by lbatista          #+#    #+#             */
-/*   Updated: 2022/08/30 11:05:36 by lbatista         ###   ########.fr       */
+/*   Updated: 2022/09/16 19:27:18 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-char *ft_strchr(const char *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
 	while (*str)
 	{
