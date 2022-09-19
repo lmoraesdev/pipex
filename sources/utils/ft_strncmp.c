@@ -6,13 +6,13 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 16:00:23 by lbatista          #+#    #+#             */
-/*   Updated: 2022/09/16 19:27:57 by lbatista         ###   ########.fr       */
+/*   Updated: 2022/09/19 15:13:16 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int	t_strncmp(const char *str1, const char *str2, size_t n)
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
 	if (n == 0)
 		return (0);
